@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.NoteEntryPage"
+             Title="Recipe Entry">
+    
+    <!-- Layout children vertically -->
+    <StackLayout Margin="20">
+        <Label Text=" Enter Your New Recipes! "
+               FontSize="Large"
+               TextColor="Black"/>
+        <Label Text= "  Don't Forget To Press Save :D"
+               TextColor="Black"/>
+        <Entry Placeholder="Recipe Title"
+               TextColor="DarkBlue"
+                Text="{Binding Title}"
+               FontSize="Large"
+                HeightRequest="100"
+               Margin="10"
+               FontAttributes="Bold"/>
+        <Entry Placeholder="Created By"
+                Text="{Binding Name}"
+               TextColor="DarkBlue"
+                Margin="10"
+                FontSize="Large"
+                HeightRequest="50" />
+        <Editor Placeholder="Ingredients"
+                Text="{Binding Ingredients}"
+                HeightRequest="150"
+                 Margin="10"
+                 FontSize="Large"
+                TextColor="DarkBlue"
+               WidthRequest="20"/>
+        <Editor Placeholder="Steps and Notes"
+                Text="{Binding Steps}"
+                 Margin="10"
+              TextColor="DarkBlue"
+                FontSize="Large"
+                HeightRequest="100"
+               WidthRequest="200"/>
+
+        <!-- Layout children in two columns -->
+        <Grid ColumnDefinitions="*,*">
+            <Button Text="Save"
+                    TextColor="White"
+                    BackgroundColor="Black"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    TextColor="White"
+                    BackgroundColor="Black"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
